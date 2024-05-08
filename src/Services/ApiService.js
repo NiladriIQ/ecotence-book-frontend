@@ -51,3 +51,23 @@ export const deleteBook = async (id) => {
         throw error;
     }
 };
+
+export const createOrder = async (body) => {
+    try {
+        const response = await axios.post(`${API_URL}/order`, body);
+        return response.data;
+    } catch (error) {
+        console.error('Error deleting book:', error);
+        throw error;
+    }
+};
+
+export const validatePayment = async (body) => {
+    try {
+        const response = await axios.post(`${API_URL}/order/validate`, body);
+        return response.data;
+    } catch (error) {
+        console.error('Error deleting book:', error);
+        throw error;
+    }
+};
